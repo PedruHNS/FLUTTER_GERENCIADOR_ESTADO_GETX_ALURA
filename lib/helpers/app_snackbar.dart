@@ -17,4 +17,12 @@ class AppSnackbar {
       snackPosition: SnackPosition.BOTTOM,
     );
   }
+
+  static void confirmOrder() {
+    Get.snackbar(
+      "Pedido confirmado",
+      "Seu pedido foi confirmado com sucesso!",
+      snackPosition: SnackPosition.BOTTOM,
+    );
+  }
 }

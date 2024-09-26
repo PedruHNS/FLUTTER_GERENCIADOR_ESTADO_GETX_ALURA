@@ -1,13 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:panucci_delivery/components/order_item.dart';
+
+import 'package:panucci_delivery/controllers/carrinho_controller.dart';
+import 'package:panucci_delivery/helpers/app_snackbar.dart';
+import 'package:panucci_delivery/screens/home.dart';
 import '../components/payment_method.dart';
 import '../components/payment_total.dart';
 
 class Checkout extends StatelessWidget {
-  const Checkout({super.key, required this.homeContext});
-  final BuildContext homeContext;
+  const Checkout({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.find<CarrinhoController>();
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -25,8 +33,8 @@ class Checkout extends StatelessWidget {
               ),
               SliverList(
                   delegate: SliverChildBuilderDelegate((context, index) {
-                return null;
-              }, childCount: 1)),
+                return OrderItem(item: controller.carrinho[index]);
+              }, childCount: controller.carrinho.length)),
               const SliverToBoxAdapter(
                 child: Padding(
                   padding: EdgeInsets.only(bottom: 8.0),
@@ -48,15 +56,18 @@ class Checkout extends StatelessWidget {
                   ),
                 ),
               ),
-              const SliverToBoxAdapter(
-                child: PaymentTotal(total: 00.00),
+              SliverToBoxAdapter(
+                child: PaymentTotal(total: controller.totalPrice.value),
               ),
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Align(
                     alignment: Alignment.bottomCenter,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        AppSnackbar.confirmOrder();
+                        Get.offAll(() => Home());
+                      },
                       style: ElevatedButton.styleFrom(
                           elevation: 0,
                           foregroundColor: Colors.white,

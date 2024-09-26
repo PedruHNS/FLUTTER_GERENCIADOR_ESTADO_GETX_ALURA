@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:panucci_delivery/components/item_list.dart';
 import 'package:panucci_delivery/controllers/carrinho_controller.dart';
+import 'package:panucci_delivery/screens/checkout.dart';
 import '../components/categoria_text.dart';
 import '../components/search_input.dart';
 
@@ -10,9 +11,6 @@ class Home extends StatelessWidget {
 
   final TextEditingController searchTextController = TextEditingController();
   final CarrinhoController carrinhoController = Get.put(CarrinhoController());
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -42,7 +40,9 @@ class Home extends StatelessWidget {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.to(() => const Checkout());
+                  },
                   child: Ink(
                       width: double.infinity,
                       height: 80,
