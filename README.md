@@ -121,5 +121,8 @@ class _CartaoState extends State<Cartao> {
     ```
 
 
+    ### Demonstração
+
+    ![Demonstração do App](../getx.gif)
 
 
