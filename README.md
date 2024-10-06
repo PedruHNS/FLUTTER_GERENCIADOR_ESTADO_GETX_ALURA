@@ -1,5 +1,12 @@
 # Projeto de Exemplo - GetX (ALURA)
 
+### Demonstração
+
+<p align="center">
+  <img width="460" height="300" src="/assets/to_readme/getx.gif">
+</p>
+
+
 ## Aplicação dos Componentes Utilizados do GetX
 
 Este projeto utiliza o GetX para gerenciamento de estado, dependências e rotas. Abaixo estão alguns dos componentes do GetX utilizados:
@@ -121,12 +128,5 @@ class _CartaoState extends State<Cartao> {
     ```
 
 
-    ### Demonstração
-
-
-
-<p align="center">
-  <img width="460" height="300" src="/assets/to_readme/getx.gif">
-</p>
 
 
