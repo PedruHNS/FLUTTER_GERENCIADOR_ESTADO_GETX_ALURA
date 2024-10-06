@@ -126,7 +126,7 @@ class _CartaoState extends State<Cartao> {
 
 
 <p align="center">
-  <img width="460" height="300" src="../getx.gif">
+  <img width="460" height="300" src="/assets/to_readme/getx.gif">
 </p>
 
 
