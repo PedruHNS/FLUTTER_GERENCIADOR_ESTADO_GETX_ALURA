@@ -123,6 +123,10 @@ class _CartaoState extends State<Cartao> {
 
     ### Demonstração
 
-    ![Demonstração do App](../getx.gif)
+
+
+<p align="center">
+  <img width="460" height="300" src="../getx.gif">
+</p>
 
 
